@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agents — Valorant</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="agents.css">
+  <link rel="stylesheet" href="Agents-modal.css">
+</head>
+<body>
+<nav class="top-nav" role="navigation">
+  <div class="logo">VALORANT</div>
+  <ul class="nav-links">
+    <li><a href="Index.html">Home</a></li>
+    <li><a href="Agents.html">Agents</a></li>
+    <li><a href="Merch.html">Merch</a></li>
+    <li><a href="About.html">About Us</a></li>
+  </ul>
+  <div class="nav-underline" aria-hidden="true"></div>
+  <ul class="right">
+    <li>
+    <a href="#" id="arrowMenuBtn" class="hamburger-icon" role="button" aria-controls="sliderMenu" aria-expanded="false" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div id="sliderMenu" role="dialog" aria-modal="true" aria-hidden="true">
+  <a href="#" id="closeSlider" class="hamburger-icon" role="button" aria-label="Close menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  <div class="slider-content" role="menu">
+    <a role="menuitem" href="Login.html">Log in</a>
+    <a role="menuitem" href="SignUp.html">Sign Up</a>
+    <a role="menuitem" href="About.html">About us</a>
+  </div>
+</div>
+<script src="nav.js"></script>
+<main>
+  <!-- Agent Info Section (Title, Description, Legend) -->
+  <section id="agent-info" class="section-container">
+    <h2 class="title">Agent Tier List</h2>
+    <p class="section__text__p2">See the latest agent rankings and their roles.</p>
+    <div class="tier-legend">
+      <span class="tier t0">T0</span>
+      <span class="tier-text">Top Tier</span>
+      <span class="tier t1">T1</span>
+      <span class="tier-text">Strong</span>
+      <span class="tier t2">T2</span>
+      <span class="tier-text">Viable</span>
+      <span class="tier t3">T3</span>
+      <span class="tier-text">Low Tier</span>
+    </div>
+  </section>
+
+  <!-- Agent Tier List Section -->
+  <section id="agent-tier" class="section-container">
+  <!-- Login prompt -->
+  <div id="agentsLoginPrompt" class="auth-prompt">
+    <p>Please <a href="Login.html">log in</a> to view the full Agents Tier list.</p>
+  </div>
+    <div id="tier-list-container" class="tier-list" data-auth-required>
+      <!-- T0 Row (Top Tier) -->
+      <div class="tier-row">
+        <div class="tier-label t0">T0</div>
+        <div class="tier-roles">
+          <div class="role-column">
+            <h4 class="role-title">Duelists</h4>
+            <div class="role-grid">
+              <!-- T0 Duelists: Jett, Yoru, Raze -->
+              <article class="card agent-card small" data-agent-id="agent-jett" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/jett.webp" alt="Jett portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Jett</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-yoru" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/yoru.webp" alt="Yoru portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Yoru</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-raze" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/raze.webp" alt="Raze portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Raze</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Initiators</h4>
+            <div class="role-grid">
+              <!-- T0 Initiators: Sova, Fade -->
+              <article class="card agent-card small" data-agent-id="agent-sova" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/sova.webp" alt="Sova portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Sova</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-fade" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/fade.webp" alt="Fade portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Fade</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Controllers</h4>
+            <div class="role-grid">
+              <!-- T0 Controllers: Clove -->
+              <article class="card agent-card small" data-agent-id="agent-clove" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/clove.webp" alt="Clove portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Clove</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Sentinels</h4>
+            <div class="role-grid">
+              <!-- T0 Sentinels: Chamber -->
+              <article class="card agent-card small" data-agent-id="agent-chamber" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/chamber.webp" alt="Chamber portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Chamber</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- T1 Row (Strong) -->
+      <div class="tier-row">
+        <div class="tier-label t1">T1</div>
+        <div class="tier-roles">
+          <div class="role-column">
+            <h4 class="role-title">Duelists</h4>
+            <div class="role-grid">
+              <!-- T1 Duelists: Waylay, Reyna, Neon -->
+              <article class="card agent-card small" data-agent-id="agent-waylay" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/waylay.webp" alt="Waylay portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Waylay</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-neon" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/neon.webp" alt="Neon portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Neon</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-reyna" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/reyna.webp" alt="Reyna portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Reyna</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Initiators</h4>
+            <div class="role-grid">
+              <!-- T1 Initiators: Skye, KAY/O -->
+              <article class="card agent-card small" data-agent-id="agent-skye" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/skye.webp" alt="Skye portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Skye</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-kay-o" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/kay-o.webp" alt="KAY/O portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>KAY/O</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Controllers</h4>
+            <div class="role-grid">
+              <!-- T1 Controllers: Omen -->
+              <article class="card agent-card small" data-agent-id="agent-omen" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/omen.webp" alt="Omen portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Omen</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Sentinels</h4>
+            <div class="role-grid">
+              <!-- T1 Sentinels: Cypher, Killjoy -->
+              <article class="card agent-card small" data-agent-id="agent-cypher" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/cypher.webp" alt="Cypher portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Cypher</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-killjoy" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/killjoy.webp" alt="Killjoy portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Killjoy</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- T2 Row (Viable) -->
+      <div class="tier-row">
+        <div class="tier-label t2">T2</div>
+        <div class="tier-roles">
+          <div class="role-column">
+            <h4 class="role-title">Duelists</h4>
+            <div class="role-grid">
+              <!-- T2 Duelists: Iso -->
+              <article class="card agent-card small" data-agent-id="agent-iso" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/iso.webp" alt="Iso portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Iso</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Initiators</h4>
+            <div class="role-grid">
+              <!-- T2 Initiators: Breach -->
+              <article class="card agent-card small" data-agent-id="agent-breach" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/breach.webp" alt="Breach portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Breach</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Controllers</h4>
+            <div class="role-grid">
+              <!-- T2 Controllers: Astra, Brimstone -->
+              <article class="card agent-card small" data-agent-id="agent-astra" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/astra.webp" alt="Astra portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Astra</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-brimstone" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/brimstone.webp" alt="Brimstone portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Brimstone</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Sentinels</h4>
+            <div class="role-grid">
+              <!-- T2 Sentinels: Vyse, Sage, Veto, Deadlock -->
+              <article class="card agent-card small" data-agent-id="agent-vyse" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/vyse.webp" alt="Vyse portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Vyse</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-sage" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/sage.webp" alt="Sage portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Sage</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-veto" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/veto.webp" alt="Veto portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Veto</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-deadlock" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/deadlock.webp" alt="Deadlock portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Deadlock</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- T3 Row (Low Tier) -->
+      <div class="tier-row">
+        <div class="tier-label t3">T3</div>
+        <div class="tier-roles">
+          <div class="role-column">
+            <h4 class="role-title">Duelists</h4>
+            <div class="role-grid">
+              <!-- T3 Duelists: Phoenix -->
+              <article class="card agent-card small" data-agent-id="agent-phoenix" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/phoenix.webp" alt="Phoenix portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Phoenix</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Initiators</h4>
+            <div class="role-grid">
+              <!-- T3 Initiators: Tejo, Gekko -->
+              <article class="card agent-card small" data-agent-id="agent-tejo" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/tejo.webp" alt="Tejo portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Tejo</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-gekko" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/gekko.webp" alt="Gekko portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Gekko</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Controllers</h4>
+            <div class="role-grid">
+              <!-- T3 Controllers: Viper, Harbor -->
+              <article class="card agent-card small" data-agent-id="agent-viper" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/viper.webp" alt="Viper portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Viper</h3>
+                </div>
+              </article>
+              <article class="card agent-card small" data-agent-id="agent-harbor" tabindex="0">
+                <div class="card-thumb">
+                  <img src="agents photo/harbor.webp" alt="Harbor portrait"/>
+                </div>
+                <div class="card-body">
+                  <h3>Harbor</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="role-column">
+            <h4 class="role-title">Sentinels</h4>
+            <div class="role-grid">
+              <!-- T3 Sentinels: none in this tier -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section id="merch-section" class="section-container">
+  <!-- Login prompt -->
+  <div id="agentsLoginPrompt" class="auth-prompt">
+    <p>Please <a href="Login.html">log in</a> to view all merchandise.</p>
+  </div>
+
+  <div id="merch-container" class="merch-list" data-auth-required>
+    <!-- Merch items go here -->
+  </div>
+</section>
+
+
+</main>
+</body>
+<script src="Agents.js"></script>
+</html>
+

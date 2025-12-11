@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merch — Valorant</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Merch.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- NAVIGATION (Home page style) -->
+  <nav class="top-nav" role="navigation">
+    <div class="logo">VALORANT</div>
+    <ul class="nav-links">
+      <li><a href="Index.html">Home</a></li>
+      <li><a href="Agents.html">Agents</a></li>
+      <li><a href="Merch.html">Merch</a></li>
+      <li><a href="About.html">About Us</a></li>
+    </ul>
+    <div class="nav-underline" aria-hidden="true"></div>
+    <ul class="right">
+      <li>
+        <a href="#" id="arrowMenuBtn" class="hamburger-icon" role="button" aria-controls="sliderMenu" aria-expanded="false" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="sliderMenu" role="dialog" aria-modal="true" aria-hidden="true">
+    <a href="#" id="closeSlider" class="hamburger-icon" role="button" aria-label="Close menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    <div class="slider-content" role="menu">
+      <a role="menuitem" href="Login.html">Log in</a>
+      <a role="menuitem" href="SignUp.html">Sign Up</a>
+      <a role="menuitem" href="About.html">About us</a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
+
+    <!-- View Cart Button -->
+  
+
+  <header class="merch-header">
+    <h1>Official Merch</h1>
+    <p>Stickers, plushies, keychains — grab limited items below.</p>
+  </header>
+
+    <!-- MERCH SECTIONS -->
+  <section class="products-section" >
+  <div class="products-grid" data-auth-required>
+    <!-- Sticker -->
+    <article class="product-card" data-id="sticker-pack">
+      <img src="merch/sticker.jpg" alt="Sticker Pack">
+      <h2>Sticker</h2>
+      <p class="price">₱49.99</p>
+      <p class="desc">High-quality stickers — Unique Designs.</p>
+      <div class="actions">
+        <button class="add-btn">Add to cart</button>
+        <button class="buy-btn">Buy now</button>
+      </div>
+    </article>
+
+    <!-- Plushie -->
+    <article class="product-card" data-id="plushie">
+      <img src="merch/plushie.webp" alt="Agent Plushie">
+      <h2>Plushie</h2>
+      <p class="price">₱119.25</p>
+      <p class="desc">Soft plush and collector-friendly.</p>
+      <div class="actions">
+        <button class="add-btn">Add to cart</button>
+        <button class="buy-btn">Buy now</button>
+      </div>
+    </article>
+
+    <!-- ID Sling -->
+    <article class="product-card" data-id="keychain">
+      <img src="merch/keychain.webp" alt="keychains">
+      <h2>Keychain</h2>
+      <p class="price">₱99.99</p>
+      <p class="desc">Durable keychains with Valorant Agent-themed.</p>
+      <div class="actions">
+        <button class="add-btn">Add to cart</button>
+        <button class="buy-btn">Buy now</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+    <!-- CART MODAL -->
+    
+
+    <div class="cart-footer" data-auth-required>
+    <div class="cart-actions">
+        <button id="checkoutBtn" class="checkout">Checkout</button>
+        <button id="resetCartBtn" class="reset-cart">Reset Cart</button> 
+        <button id="viewCartBtn" class="view-cart">View Cart 🛒</button>
+
+    </div>
+    </div>
+    <div id="cartModal" class="cart-modal" aria-hidden="true">
+      <div class="cart-panel" role="dialog" aria-label="Shopping cart">
+        <button id="closeCart" class="close-cart" aria-label="Close cart">✕</button>
+        <h3>Your cart</h3>
+        <ul id="cartItems" class="cart-items"></ul>
+        <div class="cart-footer">
+          <p class="cart-total">Total: ₱<span id="cartTotal">0.00</span></p>
+          <button id="checkoutBtn" class="checkout">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="agentsLoginPrompt" data-auth-hidden class="auth-prompt">
+      <p>Please <a href="Login.html">log in</a> to view the merchs.</p>
+    </div>
+
+   
+
+
+  </main>
+
+  <script src="nav.js"></script>
+  <script src="Merch.js"></script>
+
+</body>
+</html>

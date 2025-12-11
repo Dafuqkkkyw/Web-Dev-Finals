@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Valorant | Login</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body class="Loginbody">
+
+<div id="Login" class="Page">
+    <a href="Index.html" class="auth-back-link">&#8592; Back</a>
+    <h1>Log in</h1>
+
+        <form class="auth-form">
+            <input type="text" id="LoginUser" placeholder="Username" class="auth-input">
+            <div class="auth-password-wrapper">
+                <input type="password" id="LoginPass" placeholder="Password" class="auth-input auth-input--with-toggle">
+                <button id="togglePassBtn" type="button" class="auth-toggle-btn">
+                    <span id="eyeIcon" class="auth-eye-icon">&#128065;</span>
+                </button>
+            </div>
+            <button type="button" onclick="login()" class="auth-submit-btn">Log in</button>
+        </form>
+
+    <p>Don't have an account?
+        <a href="SignUp.html">Sign up</a>
+    </p>
+</div>
+
+</body>
+<script src="Login.js"></script>
+</html>

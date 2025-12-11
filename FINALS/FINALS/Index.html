@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valorant</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+<!-- Welcome area shown to logged-in users -->
+  <div id="welcomeUser" class="welcomeUser">
+  Welcome, <span id="welcomeName"></span>
+  <br>
+  <a href="#" id="logoutLink" class="logout-link">Logout</a>
+</div>
+
+  <!-- NAVIGATION BAR -->
+<nav class="top-nav" role="navigation">
+    <div class="logo">VALORANT</div>
+    <ul class="nav-links">
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="Agents.html">Agents</a></li>
+        <li><a href="Merch.html">Merch</a></li>
+        <li><a href="About.html">About Us</a></li>
+    </ul>
+    <a href="#" id="arrowMenuBtn" class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+</nav>
+
+<!-- SLIDER MENU -->
+<div id="sliderMenu">
+    <a href="#" id="closeSlider" class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+    <div class="slider-content">
+        <a href="Login.html">Log In</a>
+        <a href="SignUp.html">Sign Up</a>
+        <a href="About.html">About Us</a>
+    </div>
+</div>
+
+ <!-- HERO — NEW AGENT -->
+ <section class="section-band hero-band">
+  <div class="section-inner">
+      <div class="hero-text">
+          <h1>NEW AGENT: VETO</h1>
+          <p>Neutralize the battlefield and let your gunplay do the talking.</p>
+          <a class="btn" href="Agents.html">View Agent</a>
+      </div>
+  </div>
+</section>
+
+
+<!-- AGENT TIERLIST SECTION -->
+<section class="section-band agents-band">
+  <div class="section-inner">
+      <img src="reynaraze.png" class="agents-img" alt="Agents Tierlist">
+      <div class="agents-text">
+          <h2>AGENT TIERLIST</h2>
+          <p>See which Agents dominate the current meta. Updated frequently to reflect the strongest picks in competitive play.</p>
+          <a href="Agents.html" class="btn">VIEW TIERLIST</a>
+      </div>
+  </div>
+</section>
+
+<!-- MERCH SECTION -->
+<section class="section-band merch-band">
+  <div class="section-inner">
+      <div class="maps-text">
+          <h2>MERCH</h2>
+          <p>Rep your favorite agents and maps with official Valorant apparel, accessories, and collectibles.</p>
+          <a href="Merch.html" class="btn btn-dark">VIEW MERCH</a>
+      </div>
+      <img src="plushie.webp" class="maps-img" alt="Valorant Merch">
+  </div>
+</section>
+
+<!-- ABOUT US SECTION -->
+<section class="section-band about-band">
+  <div class="section-inner">
+      <div class="info-text">
+          <h2>ABOUT US</h2>
+          <p>We are your all-in-one Valorant hub — providing guides, tierlists, updates, merch highlights, and everything related to Riot Games’ competitive FPS.</p>
+          <p>Our mission is to deliver clean, fast, and accurate Valorant information while keeping the iconic style and energy of the game intact.</p>
+          <a href="About.html" class="btn btn-dark">READ MORE</a>
+      </div>
+      <img src="aboutushome.png" class="info-img" alt="About Us">
+  </div>
+</section>
+
+  </main>
+
+  <script src="nav.js"></script>
+  <script src="scroll-anim.js"></script>
+
+</body>
+</html>

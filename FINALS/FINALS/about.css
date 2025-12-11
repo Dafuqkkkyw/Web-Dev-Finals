@@ -1,0 +1,197 @@
+/* Theme variables (fallback) */
+:root{
+  --primary: #dc143c;
+  --matte-black: #0f0f0f;
+  --bg: var(--matte-black);
+  --text: #eaeaea;
+  --card-bg: #121212;
+  --muted: #9b9b9b;
+  /* Slider nav offset from edges */
+  --slider-nav-offset: 12px; /* increase this to add more gap */
+}
+
+/* Page container (no in-page scroll) */
+main {
+  /* Not a full-page snap container any more */
+  scroll-snap-type: none;
+  overflow-y: visible;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Each member card */
+.section-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;      /* vertical centering */
+  height: auto; /* fit content on page */
+  scroll-snap-align: none;
+
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+
+  background-color: var(--bg);
+  padding: 40px 12px; /* horizontal padding retained */
+  box-sizing: border-box;
+}
+
+/* Show animation */
+.section-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left side: image wrapper */
+.about-pic{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  max-width: 360px;
+}
+
+/* Left side: image - make it fill the about-pic box nicely */
+.about-pic img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;      /* limit vertical size */
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Right side: text */
+.details-container {
+  margin-left: 40px;
+  max-width: 720px; /* allow more text on wider screens while constrained by slider max-width */
+  flex: 1 1 auto; /* flexible layout */
+  min-width: 0; /* prevent overflow from long words */
+}
+
+.details-container .title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.details-container p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.details-container{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.section-container1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px; 
+  
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+
+  background-color: var(--bg);
+  padding: 28px 12px;
+  box-sizing: border-box;
+}
+
+/* --- About Slider Styles --- */
+.about-slider{
+  position: relative;
+  overflow: hidden; /* clip any stray overflow */
+  width: 100%;
+  max-width: 1180px; /* avoid horizontal scrolling and center */
+  margin: 0 auto;
+  height: auto; /* let slides adapt to content height */
+}
+.about-slider .slides{
+  display: flex;
+  width: 100%;
+  height: auto;
+  transition: transform 400ms cubic-bezier(.22,.9,.33,1);
+  gap: 0; /* avoid additional width from gaps */
+  box-sizing: border-box;
+  padding: 0; margin: 0;
+  max-width: 100%;
+}
+.about-slide{
+  min-width: 100%;
+  flex-shrink: 0; /* prevent shrink inside the flex row */
+  height: auto; /* fit content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px; /* smaller padding to avoid horizontal overflow */
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.about-slider .about-slide{ /* ensure slides are visible even with section-container opacity rules */
+  opacity: 1;
+  transform: none;
+}
+.about-slide .about-pic img{
+  width: 100%;
+  height: auto;
+  max-width: 360px; /* slightly smaller to avoid overflow */
+  max-height: 60vh;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.slider-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(0,0,0,0.5);
+  color: var(--text);
+  border: none;
+  font-size: 32px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.slider-nav.prev{ left: var(--slider-nav-offset); }
+.slider-nav.next{ right: var(--slider-nav-offset); }
+.slider-dots{
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 999;
+}
+.slider-dots .dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+}
+.slider-dots .dot.active{
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Responsive: stack content vertically on small screens */
+@media (max-width: 900px){
+  .about-slide{ flex-direction: column; gap: 12px; }
+  .about-slide .about-pic img{ max-width: 320px; }
+  .details-container{ margin-left: 0; width: 100%; max-width: 100%; }
+  .section-container{ padding: 24px 8px; }
+}
+
+@media (max-width: 480px){
+  .about-slider{ padding: 0 8px; }
+  .about-slide{ padding: 10px; }
+  .details-container{ margin-left: 0; }
+  .about-slide .about-pic img{ max-width: 260px; }
+  .section-container{ padding: 12px 6px; }
+}
+

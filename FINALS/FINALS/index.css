@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  /* Navbar height: adjust once here for consistent thickness across header elements */
+  --nav-height: 50px; /* change this to make navbar thicker or thinner */
+  /* Theme variables */
+  --primary: #dc143c; /* crimson */
+  --matte-black: #0f0f0f; /* matte black */
+  --bg: var(--matte-black);
+  --text: #eaeaea;
+  --card-bg: #121212;
+  --muted: #9b9b9b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+p{
+  color: var(--muted);
+}
+
+/* Transition */
+a, .btn{
+  transition: all 300ms ease;
+}
+
+/* navigation */
+nav, .nav-links {
+  display: flex; /* left and right content */
+}
+
+nav{
+  justify-content: space-around;
+  align-items: center;
+  height: var(--nav-height);
+}
+
+.nav-links{
+  gap: 24px; /* slightly tighter spacing to match nav height */
+  list-style: none; /* remove bullet */
+  font-size: 20px; /* reduced font to better fit the new nav height */
+}
+
+a{
+  color: var(--text);
+  text-decoration: none;
+  text-decoration-color: var(--text);
+}
+
+a:hover{
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
+
+.logo{
+  font-size: 28px; /* slightly smaller to better match new nav height */
+  color: var(--primary);
+}
+
+.logo:hover{
+  cursor: default;
+}
+
+/* hamburger menu */
+#hamburger-nav{
+  display: none;
+}
+.hamburger-menu{
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px; /* adjusted to keep proportions with navbar height */
+  width: 28px;
+  cursor: pointer;
+}
+
+.hamburger-icon span{
+  width: 100%;
+  height: 2px;
+  background-color: var(--text);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--card-bg);
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links a{
+   display: block;
+   padding: 10px;
+   text-align: center;
+  font-size: 24px;
+  color: var(--text);
+   text-decoration: none;
+   transition: all 0.3s ease-in-out;
+}
+
+.menu-links li{
+  list-style: none;
+}
+
+.menu-links.open{
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child{
+  transform: rotate(45deg) translate(10px,5px);
+}
+.hamburger-icon.open span:nth-child(2){
+  opacity: 0;
+}
+.hamburger-icon.open span:last-child{
+  transform: rotate(-45deg) translate(10px,-5px);
+}
+
+/* When the slider is open via class */
+#sliderMenu.open{
+  display: flex; /* show as flex so contents align vertically */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make nav/slider hamburger lines white when used as menu controls */
+#arrowMenuBtn span,
+#closeSlider span{
+  background-color: var(--text);
+}
+#arrowMenuBtn span{
+  vertical-align: middle;
+}
+
+#arrowMenuBtn{
+  padding: 14px 16px;
+}
+
+#closeSlider{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 6px;
+  z-index: 1010;
+}
+
+/* sections */
+section{
+  padding-top: 43px;
+  height: auto;
+  margin: 0 160px;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container{
+  display: flex;
+}
+
+/* Cards grid and cards used for agents and weapons */
+.cards-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+.card{
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.card .card-thumb img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.card .card-body h3{
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+.card .card-body p{
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.tier{
+  display: inline-block;
+  background: #ffcd00;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.tier.tier-s{ background: #FFD700; } /* gold */
+.tier.tier-a{ background: #C0C0C0; } /* silver */
+.tier.tier-b{ background: #87CEFA; } /* light blue */
+.tier.tier-c{ background: #B0C4DE; } /* grey-blue */
+/* New tier classes for T0, T1, T2, T3 */
+.tier.t0{ background: var(--primary); color: #fff; } /* Meta - highest */
+.tier.t1{ background: #ff6b6b; color: #fff; } /* Playable high */
+.tier.t2{ background: #6c757d; color: #fff; } /* Niche */
+.tier.t3{ background: #495057; color: #fff; } /* More niche */
+.weapon-card .btn{ /* smaller buttons inside cards */
+  width: auto;
+  padding: 8px 12px;
+}
+.agent-card{ flex-direction: row; }
+.agent-card .card-thumb img{ width: 120px; height: 120px; }
+.agent-card .card-body{ flex: 1; }
+.weapon-card{ flex-direction: column; align-items: flex-start; }
+
+/* profile */
+#profile{
+  display: flex;
+  justify-content: center;
+  gap: 192px;
+  height: 648px;
+}
+
+.section_pic-container{
+  display: flex;
+  width: 400px;
+  height: 400px;
+  border-radius: 320px;
+  object-fit: fill;
+  border: 5px solid var(--primary);
+  overflow: hidden;
+}
+
+.section__text{
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p{
+  font-weight: 600;
+}
+
+.section__text__p1{
+  text-align: center;
+}
+
+.section__text__p2{
+  font-size: 28px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.title{
+  font-size: 48px;
+  text-align: center;
+}
+
+#socials-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 16px;
+}
+
+/* icons */
+.icon{
+  cursor: pointer;
+  height: 32px;
+}
+
+/* BUTTONS */
+.btn-container{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn{
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 16px;
+  width: 128px;
+  border-radius: 32px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+
+.btn-color-2{
+  border: var(--primary) 1.6px solid;
+  background: none;
+  color: var(--text);
+}
+
+.btn-color-2:hover{
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  border: var(--primary) 1.6px solid;
+}
+
+/* ABOUT */
+#about{
+  padding-top: 240px;
+  position: relative;
+}
+
+.section-container{
+  justify-content: center;
+  display: flex;
+  gap: 96px;
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+.about-pic{
+  width: 400px;
+  height: 400px;
+  border-radius: 20%;
+  overflow: hidden;
+  display: flex;
+  border: 3px solid var(--primary);
+  margin: auto 0;
+}
+
+.details-container{
+  padding: 24px;
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: 32px;
+  border: 1.6px solid rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.06);
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.about-details-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-containers{
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  margin-top: 16px;
+}
+
+/* FOOTER SECTION */
+footer{
+  height: 281px;
+  margin: 0 16px;
+  background: var(--matte-black);
+}
+
+footer p{
+  text-align: center;
+  color: var(--muted);
+}
+
+#loginPrompt {
+  display:none; 
+  padding:20px; 
+  text-align:center; 
+  background: var(--card-bg); 
+  color: var(--text); 
+  margin-top:12px;
+}
+
+#welcomeUser {
+  display:none; 
+  padding: 12px 16px;
+   background: var(--card-bg); 
+   color: var(--text); 
+   font-size:20px;
+}
+
+/* Hamburger toggle for index page only */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+}
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text);
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+section {
+  padding: 40px 16px;
+  min-height: fit-content;
+  box-sizing: border-box;
+}
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+#profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.section_pic-container, .about-pic {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--primary);
+}
+
+.section__text, .details-container {
+  flex: 1;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  #profile, .section-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+
+

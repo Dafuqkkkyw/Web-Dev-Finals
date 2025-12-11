@@ -1,0 +1,327 @@
+/* Index-specific styles were moved to `index.css` — link `index.css` in Index.html  */
+
+/* === Global theme variables (crimson + matte black) === */
+:root{
+  --primary: #dc143c;        /* primary accent color (crimson) */
+  --matte-black: #0f0f0f;    /* base background for the app */
+  --bg: var(--matte-black);  /* page background */
+  --text: #eaeaea;           /* default text color on dark bg */
+  --card-bg: #121212;        /* card background */
+  --muted: #9b9b9b;          /* subdued / secondary text */
+}
+/* Original navigation styles (existing site rules) */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--matte-black);
+  position: relative;
+}
+
+ul li {
+  float: left;
+}
+
+ul li.right {
+  float: right;
+}
+
+ul li a {
+  display: block;
+  color: var(--text);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#folderBtn span {
+  margin-right: 6px;
+}
+
+ul li a:hover {
+  background-color: var(--card-bg);
+  color: var(--primary);
+  cursor: pointer;
+}
+
+/* `#arrowMenuBtn span` moved to index.css to make it index-only */
+
+#bg {
+  background-color: var(--bg);
+}
+
+.Page {
+    
+    text-align: center;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* === Top navigation (site-wide layout + colors) === */
+.top-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 16px;
+  background: var(--matte-black);
+  position: relative;
+}
+.top-nav .logo{
+  color: var(--primary);
+  font-weight:700;
+  font-size:20px;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap: 16px;
+  margin:0;
+  padding:0;
+}
+.nav-links a{
+  color: var(--text);
+  padding: 10px 8px;
+  text-decoration:none;
+}
+.nav-underline{
+  position:absolute;
+  height:3px;
+  background: var(--primary);
+  bottom: 8px;
+  left: 0;
+  width: 0;
+  transition: left 200ms ease, width 200ms ease;
+  opacity: 0;
+}
+
+.nav-links a.active{ color: var(--primary); font-weight:700; }
+
+/* Hide nav links on small screens (use slider) */
+@media (max-width: 900px) {
+  .nav-links{ display:none; }
+  .top-nav .hamburger-icon{ display:inline-flex; }
+}
+
+/* Show top-nav burger on all screen sizes by default (we keep nav-links visible on large screens) */
+.top-nav .hamburger-icon{ display:inline-flex; }
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+.logout {
+    padding:15px;
+}
+
+#Login {
+  background-color: var(--card-bg);
+    padding: 25px;
+    width: 300px;
+    border-radius: 20px;
+    color: var(--text);
+}
+
+.Loginbody {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+  background: var(--bg);     
+}
+
+/* === Slider menu container (off-canvas navigation) === */
+#sliderMenu {
+  display: none;
+  position: fixed;
+  top: 8px; /* margin top for vertical offset */
+  right: 0;
+  width: 260px; /* slightly wider for nicer layout */
+  height: calc(100% - 20px);
+  background: var(--matte-black);
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-align: center; /* center links inside */
+  /* center content when open (set via #sliderMenu.open) */
+  padding: 12px 16px;
+  overflow-y: auto; /* keep usable on small screens */
+}
+
+/* === Slider menu inner content (vertical links stack) === */
+.slider-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 0;
+  width: 100%;
+  align-items: center;
+}
+
+/* === Slider menu link appearance === */
+#sliderMenu .slider-content a {
+  display: block;
+  color: var(--text);
+  padding: 12px 8px;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+
+/* === Generic "login required" prompt style (used across pages) === */
+.auth-prompt{
+  display:none;
+  padding:20px;
+  text-align:center;
+  background: var(--card-bg);
+  color: var(--text);
+  margin-top:12px;
+}
+
+/* Keep weapons-specific ID for backwards compatibility */
+#weaponsLoginPrompt{
+  display:none;
+  padding:20px;
+  text-align:center;
+  background: var(--card-bg);
+  color: var(--text);
+  margin-top:12px;
+}
+
+/* === Login / Sign-up container panel === */
+#Login {
+  background-color: var(--card-bg);
+  padding: 25px;
+  width: 300px;
+  border-radius: 20px;
+  color: var(--text);
+}
+
+.Loginbody {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+}
+
+/* === Auth back-link (Login / Sign Up pages) === */
+.auth-back-link{
+  position:absolute;
+  right:30px;
+  top:30px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:18px;
+}
+
+/* === Shared auth form layout (Login / Sign Up) === */
+.auth-form{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+}
+
+/* === Base auth input fields === */
+.auth-input{
+  width:240px;
+  height:38px;
+  margin-bottom:16px;
+  font-size:16px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.08);
+  padding:0 12px;
+  box-sizing:border-box;
+}
+
+/* === Auth password wrapper (for eye toggle button) === */
+.auth-password-wrapper{
+  position:relative;
+  display:block;
+  width:240px;
+  margin-bottom:2px;
+}
+
+/* === Extra padding on inputs that have a toggle eye button === */
+.auth-input--with-toggle{
+  padding-right:40px;
+}
+
+/* === Password visibility toggle button (eye icon button) === */
+.auth-toggle-btn{
+  position:absolute;
+  right:5px;
+  top:50%;
+  transform:translateY(-50%);
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+/* === Eye icon size in toggle button === */
+.auth-eye-icon{
+  font-size:22px;
+}
+
+/* === Primary auth action button (Login / Sign Up submit) === */
+.auth-submit-btn{
+  width:240px;
+  height:38px;
+  font-size:16px;
+  border-radius:6px;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+/* Base navbar layout for all pages */
+nav, .nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: var(--nav-height);
+}
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 16px;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.btn {
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 32px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #ff1a3c;
+}
+
+footer {
+  background: var(--matte-black);
+  color: var(--muted);
+  padding: 40px 16px;
+  text-align: center;
+}
+
+

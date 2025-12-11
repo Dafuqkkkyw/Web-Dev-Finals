@@ -1,0 +1,220 @@
+/* ======================================================
+   GLOBAL SECTION BLOCKS (No scroll animation)
+   ====================================================== */
+
+   .section {
+    width: 100%;
+    padding: 120px 0;
+    transition: 0.3s ease;
+  }
+  
+  /* Hover animation for each section */
+  .section:hover {
+    transform: scale(1.015);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.25);
+  }
+  
+  /* Full width centering */
+  .section-inner,
+  .hero-content,
+  .info-content,
+  .agents-content,
+  .maps-content,
+  .about-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* ======================================================
+     HERO SECTION (Dark band)
+     ====================================================== */
+.hero-band {
+    background-image: url("homepageveto.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60vh;          /* Shows the whole image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+ 
+  .hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  .hero-text p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  /* ======================================================
+     AGENT TIERLIST (White band)
+     ====================================================== */
+  
+   .agents-band {
+    background-image: url("whitebg.png"); /* your background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .agents-img {
+    width: 600px;
+    height: 580px;
+  }
+  
+  .agents-text h2 {
+    color: #000000;
+    font-size: 40px;
+  }
+  .agents-text p {
+    color: #000000;
+    margin: 20px 0;
+  }
+  
+  /* ======================================================
+     MERCH SECTION (Red band)
+     ====================================================== */
+  
+   .merch-band {
+    background-image: url("redbg.png"); /* change to your actual file */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    }
+    
+  
+  .maps-img {
+    width: 500px;
+    height: 350px;
+    background: #00000022;
+    border-radius: 12px;
+  }
+  
+  .maps-text h2 {
+    color: #000000;
+    font-size: 40px;
+  }
+  .maps-text p {
+    color: #000000;
+    margin: 20px 0;
+    font-size: 18px;
+  }
+  
+  /* ======================================================
+     ABOUT US (White/light band)
+     ====================================================== */
+  
+  .about-band {
+    background-image: url("whitebg.png"); /* your background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+  .info-img {
+    width: 600px;
+    height: 420px;
+    background: #ddd;
+    border-radius: 12px;
+  }
+  
+  .info-text h2 {
+    color: #000000;
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .info-text p {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 18px;
+  }
+  
+  /* ======================================================
+     BUTTONS
+     ====================================================== */
+  
+  .btn {
+    padding: 12px 12px;
+    background: var(--primary);
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: 0.25s ease;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    transform: scale(1.08);
+  }
+  
+  .btn-dark {
+    background: #000000;
+    color:white;
+  }
+  
+  .btn-dark:hover {
+    background: #000000;
+  }
+  
+  /* ======================================================
+     RESPONSIVE
+     ====================================================== */
+  @media (max-width: 900px) {
+    .hero-content,
+    .agents-content,
+    .maps-content,
+    .info-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+/* ==========================================================
+   UNIVERSAL FULL-BLEED FIX FOR ALL SECTION BANDS
+   ========================================================== */
+
+   .section-band {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 80px 0;  /* vertical spacing only */
+    overflow: hidden; /* prevents weird side gaps */
+}
+
+/* Centered content inside the full-bleed bands */
+.section-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+  }
+

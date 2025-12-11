@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Valorant - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="Loginbody">
+
+    <a href="Index.html" 
+       class="auth-back-link">
+       &#8592; Back
+    </a>
+
+    <div id="Login" class="Page">
+        <h1>Sign Up</h1>
+
+        <form id="signupForm" class="auth-form">
+
+            <!-- Username -->
+             <div class="auth-password-wrapper">
+            <input type="text" id="SignupUser" placeholder="Username" required
+                   class="auth-input">
+                </div>
+
+            <!-- Password -->
+            <div class="auth-password-wrapper">
+                <input type="password" id="SignupPass" placeholder="Password" required
+                       class="auth-input auth-input--with-toggle">
+                
+                <button id="toggleSignupPassBtn" type="button"
+                        class="auth-toggle-btn">
+                    <span id="signupEyeIcon" class="auth-eye-icon">&#128065;</span>
+                </button>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="auth-password-wrapper">
+                <input type="password" id="SignupConfirm" placeholder="Confirm Password" required
+                       class="auth-input auth-input--with-toggle">
+                
+                <button id="toggleSignupConfirmBtn" type="button"
+                        class="auth-toggle-btn">
+                    <span id="signupConfirmEyeIcon" class="auth-eye-icon">&#128065;</span>
+                </button>
+            </div>
+
+            <button type="submit"
+                    class="auth-submit-btn">
+                Sign Up
+            </button>
+
+        </form>
+
+        <p>Already have an account? <a href="Login.html">Log in</a></p>
+    </div>
+
+    <script src="SignUp.js"></script>
+
+</body>
+</html>

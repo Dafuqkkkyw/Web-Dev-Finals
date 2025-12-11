@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Weapons — Valorant</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<nav class="top-nav" role="navigation">
+    <div class="logo">VALORANT</div>
+    <ul class="nav-links">
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="Agents.html">Agents</a></li>
+        <li><a href="Merch.html">Merch</a></li>
+        <li><a href="About.html">About Us</a></li>
+    </ul>
+    <div class="nav-underline" aria-hidden="true"></div>
+    <ul class="right">
+        <li>
+            <a href="#" id="arrowMenuBtn" class="hamburger-icon" role="button" aria-controls="sliderMenu" aria-expanded="false" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<div id="sliderMenu" role="dialog" aria-modal="true" aria-hidden="true">
+    <a href="#" id="closeSlider" class="hamburger-icon" role="button" aria-label="Close menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+    <div class="slider-content" role="menu">
+        <a role="menuitem" href="Login.html">Log in</a>
+        <a role="menuitem" href="SignUp.html">Sign Up</a>
+        <a role="menuitem" href="About.html">About us</a>
+    </div>
+</div>
+<script src="nav.js"></script>
+
+<main>
+    <section id="weapon-info" class="section-container">
+        <div class="section__text">
+            <h2 class="title">Weapon Info</h2>
+            <p class="section__text__p2">Quick stats and links to weapon pages.</p>
+        </div>
+        <div class="cards-grid" data-auth-required>
+            <article class="card weapon-card">
+                <div class="card-body">
+                    <h3>Vandal</h3>
+                    <p>High damage, versatile rifle.</p>
+                    <a class="btn btn-color-2" href="Weapons.html">See details</a>
+                </div>
+            </article>
+            <article class="card weapon-card">
+                <div class="card-body">
+                    <h3>Sheriff</h3>
+                    <p>Powerful sidearm. One-shot headshot potential.</p>
+                    <a class="btn btn-color-2" href="Weapons.html">See details</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div id="agentsLoginPrompt" data-auth-hidden class="auth-prompt">
+      <p>Please <a href="Login.html">log in</a> to view the Full Weapons info.</p>
+    </div>
+
+</main>
+</body>
+</html>
